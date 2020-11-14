@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Function & 物件 </title>
+  <script>
+        "use strict";
+          // Part 1. 定義與使用函式
+
+          // 以下是最精簡的 function
+          var f = function () {              // 記得存放在一個變數裡，否則無法使用
+            console.log("使用變數存放 function");
+          };
+
+           f();
+
+      // 函式最常使用的定義方式
+      function multiply(x, y) {   
+        return x * y;               
+      }
+      console.log( multiply(5, 6));  
+
+
+      // 多重函式：函式裡有函式，並且在函式裡使用內部的函式
+      function addSquare(x, y) {   
+        function square(num) {  
+          return num * num;       // x = 100   y = 36
+        }
+        return square(x) + square(y); 
+      }
+
+      console.log( addSquare(10, 6));  // 
+
+      // Part 3. 使用 class 定義物件
+      class Father {
+        contructor (name,hp,ap){
+          this.name = name;
+          this.hp = hp;
+          this.ap = ap;
+        }
+
+        status(){    // == method
+          console.log("本英雄名 " + this.name + "，擁有 " + this.hp + "，戰鬥力 " + this.ap);
+        }
+      }
+
+      var hero = new Father("Charile",100,30);
+      console.log(hero.status());
+      console.log(hero,name);
+       // 能靠爸就靠爸！！  ”學投資 不如學投胎 ，只能下輩子學做人“  //能繼承遺產就繼承遺產;能繼承房子就繼承 不是嗎 XD //
+      class Sun extends Father {
+        constructor(name,hp,ap,mp){
+          super(name,hp,ap);
+          this.mp = mp;
+          super.status(); 
+        }
+      }
+    
+    var mage = new Sun("Charile",100,30,10);
+
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
